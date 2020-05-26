@@ -1,8 +1,7 @@
 import React  from 'react';
 import {searchMovie, fetchMoveies } from '../actions/searchActions'
-import store from '../store'
 import {connect} from 'react-redux'
-import Results from './Results';
+
 
 function Search(props) {
   
@@ -32,6 +31,8 @@ function Search(props) {
 const mapStatesTOProps = state =>({
   text: state.moviez.text
 })
+
+
 
 export default connect(mapStatesTOProps,{searchMovie,fetchMoveies})
 (Search);

@@ -9,24 +9,22 @@ export const searchMovie = text => dispatch => {
     });
 };
 
+
 export const fetchMoveies = text => dispatch => {
-    const temp =axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=19e2fa5a&s=${text}`)
+    axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=19e2fa5a&s=${text}`)
         .then(response => dispatch({
             type:FETCH_MOVIES,
-            payload:response.data.Search,
-            
+            payload:response.data.Search
         })
         )
-        .catch(err => console.log(err));
-        console.log(temp)    
-}
+        // .then(response => 
+        //     {if(response.data.Search !== undefined)
+        //         console.log(response.data.Search)
+        //      else
+        //         console.log("movie not found")
+        //     }
 
-// export const fetchMoveies = text => {
-//     const temp =axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=19e2fa5a&s=${text}`)
-//         .then((response) => {
-//             type:FETCH_MOVIES,
-//             payload:response.data.Search,}
-//         )
-//         .catch(err => console.log(err));
-//         console.log(temp)    
-// }
+        //     )
+        .catch(err => console.log(err));
+    
+}

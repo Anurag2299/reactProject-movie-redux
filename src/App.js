@@ -3,7 +3,7 @@ import {Provider} from 'react-redux';
 
 import Search from './components/Search';
 import Results from './components/Results';
-import axios from 'axios';
+
 
 import store from './store';
 
